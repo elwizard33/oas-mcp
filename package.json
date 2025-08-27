@@ -64,7 +64,7 @@
     "@types/node": "^24.3.0",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
-    "eslint": "^8.57.0",
+    "eslint": "^9.34.0",
     "eslint-config-prettier": "^9.1.0",
     "@docusaurus/core": "^3.4.0",
     "@docusaurus/preset-classic": "^3.4.0",
