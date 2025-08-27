@@ -81,5 +81,5 @@
   "files": [
     "dist"
   ],
-  "sideEffects": false
+  "sideEffects": true
 }
