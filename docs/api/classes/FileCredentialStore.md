@@ -4,7 +4,7 @@
 
 # Class: FileCredentialStore
 
-Defined in: [cred/store.ts:19](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/cred/store.ts#L19)
+Defined in: [cred/store.ts:19](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/cred/store.ts#L19)
 
 ## Implements
 
@@ -16,7 +16,7 @@ Defined in: [cred/store.ts:19](https://github.com/elwizard33/oas-mcp/blob/8e2319
 
 > **new FileCredentialStore**(`opts`): `FileCredentialStore`
 
-Defined in: [cred/store.ts:22](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/cred/store.ts#L22)
+Defined in: [cred/store.ts:22](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/cred/store.ts#L22)
 
 #### Parameters
 
@@ -34,7 +34,7 @@ Defined in: [cred/store.ts:22](https://github.com/elwizard33/oas-mcp/blob/8e2319
 
 > **load**(): `Promise`\<`CredentialRecord`\>
 
-Defined in: [cred/store.ts:63](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/cred/store.ts#L63)
+Defined in: [cred/store.ts:63](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/cred/store.ts#L63)
 
 #### Returns
 
@@ -50,7 +50,7 @@ Defined in: [cred/store.ts:63](https://github.com/elwizard33/oas-mcp/blob/8e2319
 
 > **save**(`creds`): `Promise`\<`void`\>
 
-Defined in: [cred/store.ts:81](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/cred/store.ts#L81)
+Defined in: [cred/store.ts:81](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/cred/store.ts#L81)
 
 #### Parameters
 

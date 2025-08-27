@@ -4,7 +4,7 @@
 
 # Interface: HttpResponseEnvelope
 
-Defined in: [types/shared.ts:12](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L12)
+Defined in: [types/shared.ts:12](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L12)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: [types/shared.ts:12](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > **status**: `number`
 
-Defined in: [types/shared.ts:13](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L13)
+Defined in: [types/shared.ts:13](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L13)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [types/shared.ts:13](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > **ok**: `boolean`
 
-Defined in: [types/shared.ts:14](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L14)
+Defined in: [types/shared.ts:14](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L14)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [types/shared.ts:14](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > **headers**: `Record`\<`string`, `string`\>
 
-Defined in: [types/shared.ts:15](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L15)
+Defined in: [types/shared.ts:15](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L15)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [types/shared.ts:15](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > `optional` **body**: `string`
 
-Defined in: [types/shared.ts:16](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L16)
+Defined in: [types/shared.ts:16](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L16)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [types/shared.ts:16](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > `optional` **json**: `any`
 
-Defined in: [types/shared.ts:17](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L17)
+Defined in: [types/shared.ts:17](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L17)
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: [types/shared.ts:17](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > `optional` **base64**: `string`
 
-Defined in: [types/shared.ts:18](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L18)
+Defined in: [types/shared.ts:18](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L18)
 
 ***
 
@@ -60,7 +60,7 @@ Defined in: [types/shared.ts:18](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > `optional` **sse**: `object`[]
 
-Defined in: [types/shared.ts:19](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L19)
+Defined in: [types/shared.ts:19](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L19)
 
 #### event?
 
@@ -76,7 +76,7 @@ Defined in: [types/shared.ts:19](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > `optional` **error**: [`ToolError`](ToolError.md)
 
-Defined in: [types/shared.ts:20](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L20)
+Defined in: [types/shared.ts:20](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L20)
 
 ***
 
@@ -84,4 +84,4 @@ Defined in: [types/shared.ts:20](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > **elapsedMs**: `number`
 
-Defined in: [types/shared.ts:21](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L21)
+Defined in: [types/shared.ts:21](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L21)

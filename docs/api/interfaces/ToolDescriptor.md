@@ -4,7 +4,7 @@
 
 # Interface: ToolDescriptor
 
-Defined in: [types/shared.ts:35](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L35)
+Defined in: [types/shared.ts:35](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L35)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: [types/shared.ts:35](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > **name**: `string`
 
-Defined in: [types/shared.ts:36](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L36)
+Defined in: [types/shared.ts:36](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L36)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [types/shared.ts:36](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > `optional` **description**: `string`
 
-Defined in: [types/shared.ts:37](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L37)
+Defined in: [types/shared.ts:37](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L37)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [types/shared.ts:37](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > `optional` **input**: `any`
 
-Defined in: [types/shared.ts:38](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L38)
+Defined in: [types/shared.ts:38](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L38)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [types/shared.ts:38](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > **handler**: (`args`) => `Promise`\<`any`\>
 
-Defined in: [types/shared.ts:39](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L39)
+Defined in: [types/shared.ts:39](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L39)
 
 #### Parameters
 
@@ -54,4 +54,4 @@ Defined in: [types/shared.ts:39](https://github.com/elwizard33/oas-mcp/blob/8e23
 
 > `optional` **security**: `any`
 
-Defined in: [types/shared.ts:40](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/types/shared.ts#L40)
+Defined in: [types/shared.ts:40](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L40)

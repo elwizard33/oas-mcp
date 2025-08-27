@@ -6,7 +6,7 @@
 
 > **startServer**(`opts`): `Promise`\<`void`\>
 
-Defined in: [server.ts:93](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/server.ts#L93)
+Defined in: [server.ts:93](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/server.ts#L93)
 
 ## Parameters
 

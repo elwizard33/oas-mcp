@@ -6,7 +6,7 @@
 
 > **buildCredentialStore**(`mode`): `CredentialStore`
 
-Defined in: [cred/store.ts:135](https://github.com/elwizard33/oas-mcp/blob/8e2319f50a7dff4ff946a1b290930f93208fe588/src/cred/store.ts#L135)
+Defined in: [cred/store.ts:135](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/cred/store.ts#L135)
 
 ## Parameters
 
