@@ -137,3 +137,38 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# macOS filesystem noise
+.DS_Store
+
+# IDE/editor local settings (uncomment if you don't want to commit workspace settings)
+# .vscode/
+# .idea/
+
+# Root TypeScript build output (library distribution). If you prefer committing built files for consumers, leave commented.
+# Uncomment to stop tracking built artifacts in git while still publishing them via npm (npm pack will use prepublishOnly build).
+# /dist/
+
+# Frontend build output (always reproducible)
+frontend/dist/
+
+# Docusaurus static site output (deployment artifact)
+/build/
+
+# Temporary test credential directory created by tests
+tmp-test-creds/
+
+# OAS-MCP credential storage (file-based credential store)
+.oas_mcps/
+.mcp/
+.mcp-credentials.json
+
+# Vitest / Jest style watch mode caches (defensive; created in some setups)
+.vitest
+
+# Optional: generated API docs (typedoc). These are currently committed; comment out if you rely on them in the repo.
+# docs/api/
+
+# Local OpenAPI specs or scratch files (add patterns here if you keep large specs outside src/)
+# *.tmp.yaml
+# *.tmp.json
