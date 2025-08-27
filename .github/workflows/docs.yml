@@ -4,10 +4,10 @@ on:
   push:
     branches: [ main ]
     paths:
-  - 'docs/**'
-  - 'astro.config.mjs'
-  - 'astro-src/**'
-  - 'src/**/*.ts'  # for API docs generation
+      - 'docs/**'
+      - 'astro.config.mjs'
+      - 'astro-src/**'
+      - 'src/**/*.ts'  # for API docs generation
 
   workflow_dispatch:  # Allow manual deployment
 
@@ -15,6 +15,8 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # needed for gh-pages push
     
     steps:
       - name: Checkout repository
