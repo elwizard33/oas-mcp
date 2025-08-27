@@ -28,7 +28,11 @@ describe('Rate Limiting Strategies', () => {
   it('fixed window enforces per-minute ceiling', async () => {
     const params = baseParams('fixed');
     const server = await createMcpServer(params as any, { debug: false });
-    const tool = server.listTools().find(t => t.name.includes('get_ping'))!;
+    const tools = server.listTools();
+    const tool = tools.find(t => t.name === 'oas_mcp_ping');
+    if (!tool) {
+      throw new Error(`No ping tool found. Available tools: ${tools.map(t => t.name).join(', ')}`);
+    }
     // Use small limit
     for (let i=0;i<3;i++) {
       const r: any = await server.callTool(tool.name, { rateLimitPerMinute: 3 });
@@ -41,7 +45,11 @@ describe('Rate Limiting Strategies', () => {
   it('token bucket allows bursts up to capacity then blocks', async () => {
     const params = baseParams('token-bucket');
     const server = await createMcpServer(params as any, { debug: false });
-    const tool = server.listTools().find(t => t.name.includes('get_ping'))!;
+    const tools = server.listTools();
+    const tool = tools.find(t => t.name === 'oas_mcp_ping');
+    if (!tool) {
+      throw new Error(`No ping tool found. Available tools: ${tools.map(t => t.name).join(', ')}`);
+    }
     // capacity 3
     for (let i=0;i<3;i++) {
       const r: any = await server.callTool(tool.name, { rateLimitPerMinute: 3 });

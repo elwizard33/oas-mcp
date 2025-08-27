@@ -19,7 +19,12 @@ describe('Retry Policy', () => {
     const orig = global.fetch; (global as any).fetch = fetchImpl;
     try {
       const server = await createMcpServer(params, { debug: false });
-      const toolName = server.listTools().find(t => /_post_/.test(t.name) && t.name.includes('ping'))!.name;
+      const tools = server.listTools();
+      const tool = tools.find(t => t.name === 'oas_mcp_ping');
+      if (!tool) {
+        throw new Error(`No ping tool found. Available tools: ${tools.map(t => t.name).join(', ')}`);
+      }
+      const toolName = tool.name;
       const result: any = await server.callTool(toolName, {});
       expect(result.status).toBe(500);
       expect(calls).toBe(1); // no retries
@@ -38,7 +43,12 @@ describe('Retry Policy', () => {
       const schema = 'data:application/json,' + encodeURIComponent(JSON.stringify(spec));
       const params: any = { schemaURL: schema, baseURL: 'https://example.com', headers: {}, filters: [], nameCollisionMode: 'suffix' };
       const server = await createMcpServer(params, { debug: false });
-      const toolName = server.listTools().find(t => /_get_/.test(t.name) && t.name.includes('ping'))!.name;
+      const tools = server.listTools();
+      const tool = tools.find(t => t.name === 'oas_mcp_ping');
+      if (!tool) {
+        throw new Error(`No ping tool found. Available tools: ${tools.map(t => t.name).join(', ')}`);
+      }
+      const toolName = tool.name;
       const res: any = await server.callTool(toolName, { retryPolicy: { maxRetries: 5, baseDelayMs: 1, factor: 1, jitterPct: 0, retryOnStatuses: [503] } });
       expect(res.status).toBe(200);
       expect(res.retryAttempts).toBe(2);
@@ -54,7 +64,12 @@ describe('Retry Policy', () => {
       const schema = 'data:application/json,' + encodeURIComponent(JSON.stringify(spec));
       const params: any = { schemaURL: schema, baseURL: 'https://example.com', headers: {}, filters: [], nameCollisionMode: 'suffix' };
       const server = await createMcpServer(params, { debug: false });
-      const toolName = server.listTools().find(t => /_get_/.test(t.name) && t.name.includes('ping'))!.name;
+      const tools = server.listTools();
+      const tool = tools.find(t => t.name === 'oas_mcp_ping');
+      if (!tool) {
+        throw new Error(`No ping tool found. Available tools: ${tools.map(t => t.name).join(', ')}`);
+      }
+      const toolName = tool.name;
       const res: any = await server.callTool(toolName, { retryPolicy: { maxRetries: 3, baseDelayMs: 1, factor: 1, jitterPct: 0, retryOnStatuses: [503] } });
       expect(res.status).toBe(501);
       expect(res.retryAttempts).toBeUndefined();

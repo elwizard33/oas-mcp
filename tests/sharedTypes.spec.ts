@@ -22,7 +22,7 @@ describe('Shared type response envelope', () => {
     const params = await parseRequestParams({ s: schemaDataUrl, u: 'https://example.com' });
     const server = await createMcpServer(params, { debug: false });
   const tools = server.listTools();
-  const tool = tools.find(t => t.name.endsWith('_get_ping'));
+  const tool = tools.find(t => t.name === 'oas_mcp_pingop');
     expect(tool).toBeTruthy();
     if (!tool) return;
     const result = await server.callTool(tool.name, {});
