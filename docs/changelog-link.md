@@ -7,7 +7,7 @@ sidebar_label: Changelog
 # Changelog
 
 See:
-- [Changelog Tracker](../changelog.md)
-- GitHub Releases (future)
+- [Changelog](https://github.com/elwizard33/oas-mcp/blob/main/changelog.md)
+- [GitHub Releases](https://github.com/elwizard33/oas-mcp/releases)
 
 This page remains a stable anchor for sidebar navigation.

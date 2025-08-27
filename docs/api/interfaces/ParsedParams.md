@@ -4,7 +4,7 @@
 
 # Interface: ParsedParams
 
-Defined in: util/params.ts:12
+Defined in: [util/params.ts:13](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L13)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: util/params.ts:12
 
 > `optional` **schemaURL**: `string`
 
-Defined in: util/params.ts:13
+Defined in: [util/params.ts:14](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L14)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: util/params.ts:13
 
 > `optional` **baseURL**: `string`
 
-Defined in: util/params.ts:14
+Defined in: [util/params.ts:15](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L15)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: util/params.ts:14
 
 > **headers**: `Record`\<`string`, `string`\>
 
-Defined in: util/params.ts:15
+Defined in: [util/params.ts:16](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L16)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: util/params.ts:15
 
 > **filters**: `string`[]
 
-Defined in: util/params.ts:16
+Defined in: [util/params.ts:17](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L17)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: util/params.ts:16
 
 > `optional` **rawSchema**: `string`
 
-Defined in: util/params.ts:17
+Defined in: [util/params.ts:18](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L18)
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: util/params.ts:17
 
 > `optional` **allowedDomains**: `string`[]
 
-Defined in: util/params.ts:18
+Defined in: [util/params.ts:19](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L19)
 
 ***
 
@@ -60,7 +60,7 @@ Defined in: util/params.ts:18
 
 > `optional` **rateLimitStrategy**: `"fixed"` \| `"token-bucket"`
 
-Defined in: util/params.ts:19
+Defined in: [util/params.ts:20](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L20)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: util/params.ts:19
 
 > `optional` **streamMode**: `"off"` \| `"chunk"`
 
-Defined in: util/params.ts:20
+Defined in: [util/params.ts:21](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L21)
 
 ***
 
@@ -76,7 +76,7 @@ Defined in: util/params.ts:20
 
 > `optional` **streamThreshold**: `number`
 
-Defined in: util/params.ts:21
+Defined in: [util/params.ts:22](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L22)
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: util/params.ts:21
 
 > `optional` **nameCollisionMode**: `"suffix"` \| `"hash"`
 
-Defined in: util/params.ts:22
+Defined in: [util/params.ts:23](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L23)
 
 ***
 
@@ -92,4 +92,12 @@ Defined in: util/params.ts:22
 
 > `optional` **credStore**: `"memory"` \| `"file"`
 
-Defined in: util/params.ts:23
+Defined in: [util/params.ts:24](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L24)
+
+***
+
+### serverName?
+
+> `optional` **serverName**: `string`
+
+Defined in: [util/params.ts:25](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/util/params.ts#L25)

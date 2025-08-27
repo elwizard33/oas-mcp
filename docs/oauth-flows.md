@@ -1,6 +1,6 @@
 ---
 id: oauth-flows
-title: Guide: OAuth Flows
+title: "Guide: OAuth Flows"
 sidebar_label: OAuth Flows
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: name-collision-modes
-title: Advanced: Name Collision Modes
+title: "Advanced: Name Collision Modes"
 sidebar_label: Name Collision Modes
 ---
 

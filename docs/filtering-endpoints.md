@@ -1,6 +1,6 @@
 ---
 id: filtering-endpoints
-title: Guide: Filtering Endpoints
+title: "Guide: Filtering Endpoints"
 sidebar_label: Filtering Endpoints
 ---
 

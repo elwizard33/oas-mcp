@@ -1,5 +1,8 @@
 ---
 id: query-param-styles
+title: "Guide: Query Parameter Styles"
+sidebar_label: Query Parameter Styles
+---id: query-param-styles
 title: Guide: Query Parameter Styles
 sidebar_label: Query Param Styles
 ---

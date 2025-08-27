@@ -1,6 +1,6 @@
 ---
 id: adding-credentials
-title: Guide: Adding Credentials
+title: "Guide: Adding Credentials"
 sidebar_label: Adding Credentials
 ---
 

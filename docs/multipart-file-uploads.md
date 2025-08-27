@@ -1,6 +1,6 @@
 ---
 id: multipart-file-uploads
-title: Guide: Multipart & File Uploads
+title: "Guide: Multipart & File Uploads"
 sidebar_label: Multipart & File Uploads
 ---
 

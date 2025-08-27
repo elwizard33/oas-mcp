@@ -15,7 +15,7 @@ Two strategies per tool:
 ## Token Bucket
 - Capacity = limit/minute.
 - Refill continuously (limit/60 tokens per second) capped at capacity.
-- Reject when <1 token.
+- Reject when &lt;1 token.
 
 ## Per-Call Override
 Argument: `rateLimitPerMinute` (numeric). Strategy chosen via CLI `--rate-limit-strategy`.

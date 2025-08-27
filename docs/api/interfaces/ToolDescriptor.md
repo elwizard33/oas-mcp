@@ -4,7 +4,7 @@
 
 # Interface: ToolDescriptor
 
-Defined in: types/shared.ts:35
+Defined in: [types/shared.ts:35](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L35)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: types/shared.ts:35
 
 > **name**: `string`
 
-Defined in: types/shared.ts:36
+Defined in: [types/shared.ts:36](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L36)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: types/shared.ts:36
 
 > `optional` **description**: `string`
 
-Defined in: types/shared.ts:37
+Defined in: [types/shared.ts:37](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L37)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: types/shared.ts:37
 
 > `optional` **input**: `any`
 
-Defined in: types/shared.ts:38
+Defined in: [types/shared.ts:38](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L38)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: types/shared.ts:38
 
 > **handler**: (`args`) => `Promise`\<`any`\>
 
-Defined in: types/shared.ts:39
+Defined in: [types/shared.ts:39](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L39)
 
 #### Parameters
 
@@ -54,4 +54,4 @@ Defined in: types/shared.ts:39
 
 > `optional` **security**: `any`
 
-Defined in: types/shared.ts:40
+Defined in: [types/shared.ts:40](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L40)

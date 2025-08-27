@@ -4,7 +4,7 @@
 
 # Interface: Schema
 
-Defined in: openapi/types.ts:3
+Defined in: [openapi/types.ts:3](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L3)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: openapi/types.ts:3
 
 > `optional` **type**: `string`
 
-Defined in: openapi/types.ts:4
+Defined in: [openapi/types.ts:4](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L4)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: openapi/types.ts:4
 
 > `optional` **format**: `string`
 
-Defined in: openapi/types.ts:4
+Defined in: [openapi/types.ts:4](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L4)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: openapi/types.ts:4
 
 > `optional` **description**: `string`
 
-Defined in: openapi/types.ts:4
+Defined in: [openapi/types.ts:4](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L4)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: openapi/types.ts:4
 
 > `optional` **default**: `any`
 
-Defined in: openapi/types.ts:4
+Defined in: [openapi/types.ts:4](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L4)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: openapi/types.ts:4
 
 > `optional` **enum**: `any`[]
 
-Defined in: openapi/types.ts:5
+Defined in: [openapi/types.ts:5](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L5)
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: openapi/types.ts:5
 
 > `optional` **properties**: `Record`\<`string`, `Schema`\>
 
-Defined in: openapi/types.ts:5
+Defined in: [openapi/types.ts:5](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L5)
 
 ***
 
@@ -60,7 +60,7 @@ Defined in: openapi/types.ts:5
 
 > `optional` **items**: `Schema`
 
-Defined in: openapi/types.ts:5
+Defined in: [openapi/types.ts:5](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L5)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: openapi/types.ts:5
 
 > `optional` **required**: `string`[]
 
-Defined in: openapi/types.ts:5
+Defined in: [openapi/types.ts:5](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L5)
 
 ***
 
@@ -76,7 +76,7 @@ Defined in: openapi/types.ts:5
 
 > `optional` **allOf**: `Schema`[]
 
-Defined in: openapi/types.ts:7
+Defined in: [openapi/types.ts:7](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L7)
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: openapi/types.ts:7
 
 > `optional` **oneOf**: `Schema`[]
 
-Defined in: openapi/types.ts:8
+Defined in: [openapi/types.ts:8](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L8)
 
 ***
 
@@ -92,7 +92,7 @@ Defined in: openapi/types.ts:8
 
 > `optional` **anyOf**: `Schema`[]
 
-Defined in: openapi/types.ts:9
+Defined in: [openapi/types.ts:9](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L9)
 
 ***
 
@@ -100,7 +100,7 @@ Defined in: openapi/types.ts:9
 
 > `optional` **discriminator**: `object`
 
-Defined in: openapi/types.ts:10
+Defined in: [openapi/types.ts:10](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L10)
 
 #### propertyName
 
@@ -116,4 +116,4 @@ Defined in: openapi/types.ts:10
 
 > `optional` **\_mergedAllOf**: `boolean`
 
-Defined in: openapi/types.ts:12
+Defined in: [openapi/types.ts:12](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/openapi/types.ts#L12)

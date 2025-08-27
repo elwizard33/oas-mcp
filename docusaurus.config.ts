@@ -19,13 +19,13 @@ const config: Config = {
         docs: {
           path: 'docs',
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.ts'),
+          sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/elwizard33/oas-mcp/edit/main/',
           showLastUpdateTime: true,
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       },
     ],

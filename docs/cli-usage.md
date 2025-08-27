@@ -19,11 +19,11 @@ oas-mcp serve [options]
 | `--port <n>` | 8080 | HTTP listen port |
 | `--host <h>` | 127.0.0.1 | Bind host |
 | `--debug` | false | Verbose logging |
-| `--rate-limit-strategy <fixed|token-bucket>` | fixed | Per-tool rate limiting mode |
-| `--stream-mode <off|chunk>` | off | Enable chunk streaming for large responses |
+| `--rate-limit-strategy <fixed\|token-bucket>` | fixed | Per-tool rate limiting mode |
+| `--stream-mode <off\|chunk>` | off | Enable chunk streaming for large responses |
 | `--stream-threshold <bytes>` | 65536 | Size threshold for streaming mode |
-| `--name-collision-mode <suffix|hash>` | suffix | Tool naming collision policy |
-| `--cred-store <memory|file>` | memory | Credential persistence backend |
+| `--name-collision-mode <suffix\|hash>` | suffix | Tool naming collision policy |
+| `--cred-store <memory\|file>` | memory | Credential persistence backend |
 | `--allow-file` | false | Allow local filesystem specs |
 
 ## Credential Storage

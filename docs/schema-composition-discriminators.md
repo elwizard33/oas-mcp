@@ -1,6 +1,6 @@
 ---
 id: schema-composition-discriminators
-title: Advanced: Schema Composition & Discriminators
+title: "Advanced: Schema Composition & Discriminators"
 sidebar_label: Schema Composition & Discriminators
 ---
 

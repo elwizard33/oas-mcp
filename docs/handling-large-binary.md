@@ -1,7 +1,7 @@
 ---
 id: handling-large-binary
-title: Guide: Handling Large / Binary Responses
-sidebar_label: Large / Binary Responses
+title: "Guide: Handling Large / Binary Responses"
+sidebar_label: Handling Large / Binary Responses
 ---
 
 # Guide: Handling Large / Binary Responses
@@ -9,7 +9,7 @@ sidebar_label: Large / Binary Responses
 Related: [Streaming Responses](streaming-responses.md), [Metrics](metrics.md)
 
 Scenarios:
-- Small binary (<=128KB): base64 inline
+- Small binary (&lt;=128KB): base64 inline
 - Large binary: truncated placeholder or streamed (chunk mode)
 
 Tips:

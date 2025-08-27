@@ -4,7 +4,7 @@
 
 # Interface: ToolMetricsWindow
 
-Defined in: types/shared.ts:24
+Defined in: [types/shared.ts:24](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L24)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: types/shared.ts:24
 
 > **calls**: `number`
 
-Defined in: types/shared.ts:25
+Defined in: [types/shared.ts:25](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L25)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: types/shared.ts:25
 
 > **errors**: `number`
 
-Defined in: types/shared.ts:26
+Defined in: [types/shared.ts:26](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L26)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: types/shared.ts:26
 
 > **lastCallMs**: `number`
 
-Defined in: types/shared.ts:27
+Defined in: [types/shared.ts:27](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L27)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: types/shared.ts:27
 
 > **windowCount**: `number`
 
-Defined in: types/shared.ts:28
+Defined in: [types/shared.ts:28](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L28)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: types/shared.ts:28
 
 > `optional` **avgLatencyMs**: `number`
 
-Defined in: types/shared.ts:29
+Defined in: [types/shared.ts:29](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L29)
 
 ***
 
@@ -52,4 +52,4 @@ Defined in: types/shared.ts:29
 
 > `optional` **p95LatencyMs**: `number`
 
-Defined in: types/shared.ts:30
+Defined in: [types/shared.ts:30](https://github.com/elwizard33/oas-mcp/blob/7cf9d567cc88511dc791c0b4404a83049800ec70/src/types/shared.ts#L30)

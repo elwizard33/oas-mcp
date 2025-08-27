@@ -1,6 +1,6 @@
 ---
 id: architecture-overview
-title: Contributing: Architecture Overview
+title: "Contributing: Architecture Overview"
 sidebar_label: Architecture Overview
 ---
 

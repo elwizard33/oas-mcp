@@ -1,6 +1,6 @@
 ---
 id: development-setup
-title: Contributing: Development Setup
+title: "Contributing: Development Setup"
 sidebar_label: Development Setup
 ---
 

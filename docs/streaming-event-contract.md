@@ -1,6 +1,6 @@
 ---
 id: streaming-event-contract
-title: Advanced: Streaming Event Contract
+title: "Advanced: Streaming Event Contract"
 sidebar_label: Streaming Event Contract
 ---
 

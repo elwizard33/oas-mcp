@@ -1,6 +1,6 @@
 ---
 id: credential-store
-title: Advanced: Credential Store
+title: "Advanced: Credential Store"
 sidebar_label: Credential Store
 ---
 
