@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import docsIndex from '../util/docsIndex';
+const sidebar = docsIndex.sidebar;
+const intro = docsIndex.docs.find(d=>d.slug==='overview') || docsIndex.docs[0];
+---
+<Layout title="Overview" {sidebar} currentPath="/oas-mcp/">
+  <h1>oas-mcp Documentation</h1>
+  <p>Static documentation generated with Astro, sourced from the existing <code>/docs</code> folder.</p>
+  <h2>Quick Links</h2>
+  <ul>
+    {sidebar.slice(0,8).map(i=> <li><a href={i.href}>{i.label}</a></li>)}
+  </ul>
+  {intro && (
+    <section>
+      <h2>{intro.frontmatter.title || intro.slug}</h2>
+      <Fragment set:html={intro.html} />
+    </section>
+  )}
+</Layout>

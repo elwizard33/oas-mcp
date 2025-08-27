@@ -32,8 +32,8 @@
   "test": "vitest run",
   "docs:typedoc": "typedoc",
   "docs:prepare": "rimraf docs/api && npm run docs:typedoc",
-  "docs:start": "npm run docs:prepare && docusaurus start",
-  "docs:build": "npm run docs:prepare && docusaurus build",
+  "docs:start": "npm run docs:prepare && astro dev",
+  "docs:build": "npm run docs:prepare && astro build",
   "docs:deploy": "npm run docs:build && gh-pages -d build"
   ,"docs:check": "node scripts/check-doc-links.mjs"
   },
@@ -66,8 +66,8 @@
     "@typescript-eslint/parser": "^7.16.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
-    "@docusaurus/core": "3.4.0",
-    "@docusaurus/preset-classic": "3.4.0",
+  "astro": "^4.0.0",
+  "marked": "^12.0.2",
   "typedoc": "0.28.0",
   "typedoc-plugin-markdown": "^4.8.1",
     "gh-pages": "^6.0.0",

@@ -4,10 +4,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'docs/**'
-      - 'docusaurus.config.ts'
-      - 'sidebars.ts'
-      - 'src/**/*.ts'  # for API docs generation
+  - 'docs/**'
+  - 'astro.config.mjs'
+  - 'astro-src/**'
+  - 'src/**/*.ts'  # for API docs generation
 
   workflow_dispatch:  # Allow manual deployment
 
@@ -17,30 +17,26 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Build documentation
-      env:
-        NODE_OPTIONS: "--trace-warnings"
-      run: |
-        echo "Node version:" $(node -v)
-        npm run docs:build
-      
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
-        publish_branch: gh-pages
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build documentation (Astro)
+        run: npm run docs:build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

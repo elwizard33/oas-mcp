@@ -8,9 +8,11 @@ Start adding entries under [Unreleased]; when you cut the first release, create 
 
 ## [Unreleased]
 ### Added
+ - Astro-based static documentation site generation replacing Docusaurus, using existing `/docs` Markdown and TypeDoc output.
 ### Changed
 ### Deprecated
 ### Removed
+ - Docusaurus configuration, plugins, and sidebars removed in favor of simpler Astro build.
 ### Fixed
 ### Security
 

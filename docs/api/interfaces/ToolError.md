@@ -4,7 +4,7 @@
 
 # Interface: ToolError
 
-Defined in: [types/shared.ts:3](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L3)
+Defined in: [types/shared.ts:3](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/types/shared.ts#L3)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: [types/shared.ts:3](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > **type**: `string`
 
-Defined in: [types/shared.ts:4](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L4)
+Defined in: [types/shared.ts:4](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/types/shared.ts#L4)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [types/shared.ts:4](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > **message**: `string`
 
-Defined in: [types/shared.ts:5](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L5)
+Defined in: [types/shared.ts:5](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/types/shared.ts#L5)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [types/shared.ts:5](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **status**: `number`
 
-Defined in: [types/shared.ts:6](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L6)
+Defined in: [types/shared.ts:6](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/types/shared.ts#L6)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [types/shared.ts:6](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **attempt**: `number`
 
-Defined in: [types/shared.ts:7](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L7)
+Defined in: [types/shared.ts:7](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/types/shared.ts#L7)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [types/shared.ts:7](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **retryDelayMs**: `number`
 
-Defined in: [types/shared.ts:8](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L8)
+Defined in: [types/shared.ts:8](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/types/shared.ts#L8)
 
 ***
 
@@ -52,4 +52,4 @@ Defined in: [types/shared.ts:8](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **cause**: `string`
 
-Defined in: [types/shared.ts:9](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L9)
+Defined in: [types/shared.ts:9](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/types/shared.ts#L9)

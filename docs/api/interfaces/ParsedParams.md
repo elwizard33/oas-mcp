@@ -4,7 +4,7 @@
 
 # Interface: ParsedParams
 
-Defined in: [util/params.ts:13](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L13)
+Defined in: [util/params.ts:13](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L13)
 
 ## Properties
 
@@ -12,7 +12,7 @@ Defined in: [util/params.ts:13](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **schemaURL**: `string`
 
-Defined in: [util/params.ts:14](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L14)
+Defined in: [util/params.ts:14](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L14)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [util/params.ts:14](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **baseURL**: `string`
 
-Defined in: [util/params.ts:15](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L15)
+Defined in: [util/params.ts:15](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L15)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [util/params.ts:15](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > **headers**: `Record`\<`string`, `string`\>
 
-Defined in: [util/params.ts:16](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L16)
+Defined in: [util/params.ts:16](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L16)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [util/params.ts:16](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > **filters**: `string`[]
 
-Defined in: [util/params.ts:17](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L17)
+Defined in: [util/params.ts:17](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L17)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [util/params.ts:17](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **rawSchema**: `string`
 
-Defined in: [util/params.ts:18](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L18)
+Defined in: [util/params.ts:18](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L18)
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: [util/params.ts:18](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **allowedDomains**: `string`[]
 
-Defined in: [util/params.ts:19](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L19)
+Defined in: [util/params.ts:19](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L19)
 
 ***
 
@@ -60,7 +60,7 @@ Defined in: [util/params.ts:19](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **rateLimitStrategy**: `"fixed"` \| `"token-bucket"`
 
-Defined in: [util/params.ts:20](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L20)
+Defined in: [util/params.ts:20](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L20)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: [util/params.ts:20](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **streamMode**: `"off"` \| `"chunk"`
 
-Defined in: [util/params.ts:21](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L21)
+Defined in: [util/params.ts:21](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L21)
 
 ***
 
@@ -76,7 +76,7 @@ Defined in: [util/params.ts:21](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **streamThreshold**: `number`
 
-Defined in: [util/params.ts:22](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L22)
+Defined in: [util/params.ts:22](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L22)
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: [util/params.ts:22](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **nameCollisionMode**: `"suffix"` \| `"hash"`
 
-Defined in: [util/params.ts:23](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L23)
+Defined in: [util/params.ts:23](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L23)
 
 ***
 
@@ -92,7 +92,7 @@ Defined in: [util/params.ts:23](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **credStore**: `"memory"` \| `"file"`
 
-Defined in: [util/params.ts:24](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L24)
+Defined in: [util/params.ts:24](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L24)
 
 ***
 
@@ -100,4 +100,4 @@ Defined in: [util/params.ts:24](https://github.com/elwizard33/oas-mcp/blob/f9327
 
 > `optional` **serverName**: `string`
 
-Defined in: [util/params.ts:25](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/util/params.ts#L25)
+Defined in: [util/params.ts:25](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/util/params.ts#L25)

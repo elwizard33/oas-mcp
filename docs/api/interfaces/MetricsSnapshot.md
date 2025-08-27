@@ -4,7 +4,7 @@
 
 # Interface: MetricsSnapshot
 
-Defined in: [types/shared.ts:33](https://github.com/elwizard33/oas-mcp/blob/f93270cb7f8cf145e9a87cf91a1bfb2c12486f7e/src/types/shared.ts#L33)
+Defined in: [types/shared.ts:33](https://github.com/elwizard33/oas-mcp/blob/360f27d669a1e52ab74d11caab548be9e7506b7d/src/types/shared.ts#L33)
 
 ## Indexable
 
