@@ -10,7 +10,7 @@ Only the most recent published 0.x version receives security fixes. Please upgra
 
 ## Reporting a Vulnerability
 
-1. Email: security@example.com (replace with project email or maintainer alias).
+1. Email: mago@elwizard.net 
 2. Provide: description, affected versions, reproduction steps / PoC, potential impact, suggested remediation (if known).
 3. Expect initial acknowledgement within 72 hours and a status update within 7 days.
 
