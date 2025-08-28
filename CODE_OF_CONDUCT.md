@@ -24,7 +24,7 @@ Maintainers clarify standards and take corrective action (edit/delete comments, 
 This Code applies within project spaces and in public spaces when representing the project.
 
 ## Enforcement
-Report issues to: conduct@example.com (replace with project contact). All complaints will be reviewed promptly and fairly.
+Report issues to: mago@elwizard.net. All complaints will be reviewed promptly and fairly.
 
 Enforcement actions may include warning, temporary or permanent ban.
 
