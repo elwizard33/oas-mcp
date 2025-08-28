@@ -2,12 +2,12 @@
 	<h1>OAS → MCP Server</h1>
 	<p><strong>Turn any OpenAPI 3.x spec into a suite of Model Context Protocol tools (JSON-RPC over SSE) in seconds.</strong></p>
 	<p>
-		<a href="https://github.com/elwizard33/oas-mcp/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/elwizard33/oas-mcp/actions/workflows/ci.yml/badge.svg" /></a>
+		<a href="https://github.com/elwizard33/oas-mcp/actions/workflows/pages.yml"><img alt="Deploy" src="https://github.com/elwizard33/oas-mcp/actions/workflows/pages.yml/badge.svg" /></a>
 		<a href="https://www.npmjs.com/package/oas-mcp"><img alt="npm version" src="https://img.shields.io/npm/v/oas-mcp.svg?color=cb3837" /></a>
 		<a href="https://www.npmjs.com/package/oas-mcp"><img alt="npm downloads" src="https://img.shields.io/npm/dm/oas-mcp.svg" /></a>
 		<img alt="Node version" src="https://img.shields.io/node/v/oas-mcp.svg" />
 		<img alt="Types" src="https://img.shields.io/badge/types-TypeScript-blue.svg" />
-		<a href="https://elwizard33.github.io/oas-mcp"><img alt="Docs" src="https://img.shields.io/badge/docs-docusaurus-brightgreen" /></a>
+		<a href="https://elwizard33.github.io/oas-mcp"><img alt="Docs (Astro)" src="https://img.shields.io/badge/docs-astro-%230073ff" /></a>
 		<a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-lightgrey" /></a>
 	</p>
 	<sub>Lazy endpoint tool generation • Rate limiting (fixed + token bucket) • Retry policies • OAuth flows • Streaming (chunk + SSE) • Metrics (p95/p99, streaks, error rate) • Credential stores (memory/file + optional encryption) • SSRF protections</sub>
@@ -215,8 +215,11 @@ Flow: Parse + cache spec → create auth tools + register lazy endpoint factorie
 See `examples/` for minimal startup and in-memory usage patterns.
 
 ## Docs Site
-Full documentation (concepts, guides, advanced topics, API reference):
+Full documentation (concepts, guides, advanced topics, API reference) is built with **Astro + TypeDoc** and deployed via GitHub Pages actions (artifact → Pages). The site is regenerated on pushes that touch docs, source, or configuration.
+
 👉 https://elwizard33.github.io/oas-mcp
+
+_Note: Previously powered by Docusaurus; migrated to Astro for a lighter, zero-Webpack static pipeline and simpler integration with existing markdown + generated API docs._
 
 ## Contributing
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) and the [Code of Conduct](./CODE_OF_CONDUCT.md). Development scripts:
