@@ -22,4 +22,4 @@ Argument: `rateLimitPerMinute` (numeric). Strategy chosen via CLI `--rate-limit-
 
 Metrics windowCount/windowErrors reflect attempts.
 
-Next: [Retry Policy](retry-policy.md).
+Next: [Retry Policy](retry-policy.md) and [Streaming Responses](streaming-responses.md).

@@ -88,7 +88,7 @@ function challenge(res: http.ServerResponse, opts: StartOptions, auth: AuthConfi
   res.end(JSON.stringify({ error: 'unauthorized' }));
 }
 
-export interface StartOptions { host: string; port: number; debug: boolean; allowFile?: boolean; rateLimitStrategy?: 'fixed' | 'token-bucket'; streamMode?: 'off' | 'chunk'; streamThreshold?: number; nameCollisionMode?: 'suffix' | 'hash'; credStore?: 'memory' | 'file'; verboseNames?: boolean; protectedMode?: boolean; authIssuer?: string; authServer?: string; tokenAudience?: string; jwksUri?: string; insecureUnsignedTokens?: boolean; proxyRegister?: boolean; }
+export interface StartOptions { host: string; port: number; debug: boolean; allowFile?: boolean; rateLimitStrategy?: 'fixed' | 'token-bucket'; streamMode?: 'off' | 'chunk'; streamThreshold?: number; nameCollisionMode?: 'suffix' | 'hash'; credStore?: 'memory' | 'file'; verboseNames?: boolean; protectedMode?: boolean; authIssuer?: string; authServer?: string; tokenAudience?: string; jwksUri?: string; insecureUnsignedTokens?: boolean; proxyRegister?: boolean; proxyOAuth?: boolean; dnsRebindProtect?: boolean; allowedHosts?: string[]; }
 
 export async function startServer(opts: StartOptions) {
   const sseServer = buildSseServer({ debug: opts.debug });
@@ -103,6 +103,23 @@ export async function startServer(opts: StartOptions) {
   const server = http.createServer(async (req, res) => {
     if (!req.url) { res.statusCode = 400; res.end('Bad Request'); return; }
     const url = new URL(req.url, `http://${req.headers.host}`);
+
+    // DNS rebinding protection: ensure Host + remote address are within allowed set
+    if (opts.dnsRebindProtect) {
+      const hostHeader = (req.headers['host'] || '').toString();
+      const hostName = hostHeader.split(':')[0].toLowerCase();
+      const remote = (req.socket.remoteAddress || '').replace(/^::ffff:/,'');
+      const defaultAllowed = new Set<string>([opts.host.toLowerCase(), 'localhost', '127.0.0.1', '::1']);
+      const extraAllowed = (opts.allowedHosts || []).map(h => h.toLowerCase());
+      for (const h of extraAllowed) defaultAllowed.add(h);
+      const remoteOk = remote === '127.0.0.1' || remote === '::1' || remote === opts.host || remote.startsWith('192.168.') || remote.startsWith('10.') || remote.startsWith('172.16.');
+      if (!defaultAllowed.has(hostName) || !remoteOk) {
+        res.statusCode = 421; // misdirected / suspicious
+        res.setHeader('content-type','application/json');
+        res.end(JSON.stringify({ error: 'host_not_allowed', detail: 'DNS rebinding protection: host or remote not allowed' }));
+        return;
+      }
+    }
 
     function setCors() {
       const origin = req.headers.origin || '';
@@ -352,6 +369,35 @@ export async function startServer(opts: StartOptions) {
           const text = await resp.text();
           res.statusCode = resp.status; res.setHeader('content-type', resp.headers.get('content-type') || 'application/json'); res.end(text);
         } catch (e:any) { res.statusCode = 502; res.end(JSON.stringify({ error: 'register proxy failure', detail: e.message })); }
+      });
+      return;
+    }
+    // OAuth token exchange proxy (client_credentials / authorization_code / refresh_token)
+    if (auth.protectedMode && opts.proxyOAuth && url.pathname === '/oauth/token' && req.method === 'POST' && opts.authServer) {
+      setCors();
+      let body='';
+      req.on('data', c => { body += c; if (body.length > 200_000) req.destroy(); });
+      req.on('end', async () => {
+        try {
+          const json = body ? JSON.parse(body) : {};
+          const { server: serverId, scheme = 'auth', store = true, ...tokenParams } = json;
+          const grant = tokenParams.grant_type;
+          if (!grant) { res.statusCode = 400; res.end(JSON.stringify({ error: 'grant_type required'})); return; }
+          if (!['client_credentials','authorization_code','refresh_token'].includes(grant)) { res.statusCode = 400; res.end(JSON.stringify({ error: 'unsupported grant_type'})); return; }
+          const form = new URLSearchParams();
+            for (const [k,v] of Object.entries(tokenParams)) { if (v!=null) form.set(k, String(v)); }
+          const target = opts.authServer!.replace(/\/$/, '') + '/token';
+          const resp = await fetch(target, { method:'POST', headers: { 'content-type':'application/x-www-form-urlencoded' }, body: form.toString() });
+          const text = await resp.text();
+          let parsed: any; try { parsed = JSON.parse(text); } catch { parsed = null; }
+          if (resp.ok && parsed && store && serverId && parsed.access_token) {
+            const inst = serverInstances.get(serverId);
+            if (inst) {
+              try { await (inst as any).setCredential(scheme, { accessToken: parsed.access_token, tokenType: parsed.token_type || 'Bearer', refreshToken: parsed.refresh_token }); } catch {/* ignore */}
+            }
+          }
+          res.statusCode = resp.status; res.setHeader('content-type', resp.headers.get('content-type') || 'application/json'); res.end(text);
+        } catch (e:any) { res.statusCode = 502; res.end(JSON.stringify({ error: 'token proxy failure', detail: e.message })); }
       });
       return;
     }

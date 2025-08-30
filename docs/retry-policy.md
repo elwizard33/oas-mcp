@@ -22,4 +22,4 @@ Backoff: `delay = base * factor^(attempt-1) + jitter(±jitterPct*base)`.
 
 Result includes `retryAttempts` and enriched error fields (`attempt`, `cause`, `retryDelayMs`).
 
-Next: [Streaming Responses](streaming-responses.md).
+Next: [Streaming Responses](streaming-responses.md) and [Sampling Helpers](sampling.md).

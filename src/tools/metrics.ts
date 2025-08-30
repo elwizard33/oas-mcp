@@ -19,14 +19,16 @@ export interface MetricRecord {
   currentFailureStreak: number;
   latencies: number[];      // rolling latency samples
   bucket?: RateLimitBucket; // token bucket state when strategy=token-bucket
+  lastRetryAttempts?: number; // number of retries performed on last call
+  lastStatusCode?: number;    // HTTP status (if available) from last call
 }
 
 export function createMetricRecord(now: number): MetricRecord {
-  return { calls: 0, errors: 0, lastCallMs: 0, windowStart: now, windowCount: 0, windowErrors: 0, currentSuccessStreak: 0, currentFailureStreak: 0, latencies: [] };
+  return { calls: 0, errors: 0, lastCallMs: 0, windowStart: now, windowCount: 0, windowErrors: 0, currentSuccessStreak: 0, currentFailureStreak: 0, latencies: [], lastRetryAttempts: 0 };
 }
 
 // Update metrics for a call outcome
-export function recordMetric(map: Map<string, MetricRecord>, name: string, ok: boolean, elapsedMs?: number) {
+export function recordMetric(map: Map<string, MetricRecord>, name: string, ok: boolean, elapsedMs?: number, extra?: { retryAttempts?: number; statusCode?: number }) {
   const now = Date.now();
   let m = map.get(name);
   if (!m) { m = createMetricRecord(now); map.set(name, m); }
@@ -48,10 +50,14 @@ export function recordMetric(map: Map<string, MetricRecord>, name: string, ok: b
     m.latencies.push(elapsedMs);
     if (m.latencies.length > 200) m.latencies.shift();
   }
+  if (extra) {
+    if (typeof extra.retryAttempts === 'number') m.lastRetryAttempts = extra.retryAttempts;
+    if (typeof extra.statusCode === 'number') m.lastStatusCode = extra.statusCode;
+  }
 }
 
 export interface PublicMetricSnapshot {
-  calls: number; errors: number; lastCallMs: number; windowCount: number; avgLatencyMs?: number; p95LatencyMs?: number; p99LatencyMs?: number; errorRatePct?: number; currentSuccessStreak: number; currentFailureStreak: number;
+  calls: number; errors: number; lastCallMs: number; windowCount: number; avgLatencyMs?: number; p95LatencyMs?: number; p99LatencyMs?: number; errorRatePct?: number; currentSuccessStreak: number; currentFailureStreak: number; lastRetryAttempts?: number; lastStatusCode?: number;
 }
 
 // Produce a plain object snapshot suitable for JSON serialization & tool response
@@ -70,7 +76,7 @@ export function snapshotMetrics(map: Map<string, MetricRecord>): Record<string, 
     }
     let errorRatePct: number | undefined = undefined;
     if (v.windowCount > 0) errorRatePct = +((v.windowErrors / v.windowCount) * 100).toFixed(2);
-    out[k] = { calls: v.calls, errors: v.errors, lastCallMs: v.lastCallMs, windowCount: v.windowCount, avgLatencyMs: avg, p95LatencyMs: p95, p99LatencyMs: p99, errorRatePct, currentSuccessStreak: v.currentSuccessStreak || 0, currentFailureStreak: v.currentFailureStreak || 0 };
+  out[k] = { calls: v.calls, errors: v.errors, lastCallMs: v.lastCallMs, windowCount: v.windowCount, avgLatencyMs: avg, p95LatencyMs: p95, p99LatencyMs: p99, errorRatePct, currentSuccessStreak: v.currentSuccessStreak || 0, currentFailureStreak: v.currentFailureStreak || 0, lastRetryAttempts: v.lastRetryAttempts, lastStatusCode: v.lastStatusCode };
   }
   return out;
 }
