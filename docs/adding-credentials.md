@@ -18,7 +18,7 @@ The easiest way to add credentials is through the [Frontend Web Interface](front
 4. **Save credentials**: Click "Save Credential" to store securely server-side
 5. **Generate config**: Use the generated MCP server configuration
 
-The frontend automatically handles credential storage and never includes sensitive data in URLs.
+The frontend automatically handles credential storage, never includes secrets in URLs, and will surface environment-imported credentials (see below) for confirmation.
 
 ## Using JSON-RPC (Programmatic)
 
@@ -36,4 +36,18 @@ For direct API access or automation:
 4. Call secured endpoint.
 5. Clear if needed: `_auth_apiKey_clear`.
 
-Continue: [OAuth Flows](oauth-flows.md). Also see [Rate Limiting](rate-limiting.md) and [Retry Policy](retry-policy.md) for post-auth resilience.
+### Environment Auto-Import
+On server start, variables matching `OAS_MCP_<SCHEME>_<ID>` are parsed and loaded once (if that credential id absent). Examples:
+```
+export OAS_MCP_apiKey_default=sk_live_x
+export OAS_MCP_basic_myservice="user:pass"
+```
+Scheme portion maps to auth tool prefix (apiKey, basic, bearer, oauth2, cookie).
+
+### OAuth Proxy Assisted Setup
+If started with `--auth-server` and `--proxy-oauth`, you can exchange a code directly:
+1. Get authorization code via browser against remote auth server.
+2. Call `_auth_oauth2_exchange` tool (or use frontend) with `code`, `redirect_uri`, `server` id.
+3. Access + refresh tokens stored (masked in listings).
+
+Continue: [OAuth Flows](oauth-flows.md), [Security](security.md), plus [Rate Limiting](rate-limiting.md) and [Retry Policy](retry-policy.md) for post-auth resilience.

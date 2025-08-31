@@ -31,6 +31,11 @@ export async function streamResponse(server: MCPServer, resp: Response, toolName
   const streamId = 'str_' + crypto.randomUUID();
   (server as any).emitStreamEvent({ streamId, event: 'start', data: { status: resp.status, ok: resp.ok, headers: headersObj, contentType } });
   let total = 0;
+  let lastProgressEmit = Date.now();
+  const progressIntervalMs = 500; // throttle progress notifications
+  const assembleText = /^text\//i.test(contentType) || /json|\+json/i.test(contentType);
+  let textDecoder: TextDecoder | null = assembleText ? new TextDecoder() : null;
+  let assembled = '';
   try {
     const reader = (resp.body as any).getReader();
     while (true) {
@@ -39,9 +44,23 @@ export async function streamResponse(server: MCPServer, resp: Response, toolName
       if (value && value.length) {
         total += value.length;
         (server as any).emitStreamEvent({ streamId, event: 'chunk', data: { base64: Buffer.from(value).toString('base64') } });
+        if (textDecoder) {
+          try { assembled += textDecoder.decode(value, { stream: true }); } catch { /* ignore decoding errors */ }
+          const now = Date.now();
+          if (now - lastProgressEmit >= progressIntervalMs) {
+            lastProgressEmit = now;
+            (server as any).emitStreamEvent({ streamId, event: 'progress', data: { bytes: total, preview: assembled.slice(0, 500) } });
+          }
+        } else {
+          const now = Date.now();
+            if (now - lastProgressEmit >= progressIntervalMs) { lastProgressEmit = now; (server as any).emitStreamEvent({ streamId, event: 'progress', data: { bytes: total } }); }
+        }
       }
     }
-    (server as any).emitStreamEvent({ streamId, event: 'end', data: { totalBytes: total, status: resp.status, ok: resp.ok } });
+    if (textDecoder) {
+      try { assembled += textDecoder.decode(); } catch { /* ignore */ }
+    }
+    (server as any).emitStreamEvent({ streamId, event: 'end', data: { totalBytes: total, status: resp.status, ok: resp.ok, preview: assembled.slice(0, 1000) } });
   } catch (e: any) {
     (server as any).emitStreamEvent({ streamId, event: 'error', data: { message: e.message } });
   }

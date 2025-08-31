@@ -39,6 +39,8 @@
 - [Security Policy](#security-policy)
 - [License](#license)
 
+See also: `docs/feature-matrix.md` for current MCP feature coverage status.
+
 ## Overview
 The server ingests an OpenAPI 3.x document (remote URL, `data:` URI, or optional local file) and exposes each qualifying operation as a lazily registered MCP tool. The result: an instantly navigable tool surface you can list and invoke via a single SSE + JSON-RPC connection. Advanced features (retry, streaming, OAuth, metrics) layer transparently on top of the generated handlers.
 
@@ -92,6 +94,36 @@ oas-mcp serve [options]
 | `--stream-threshold <bytes>` | 65536 | Chunk threshold |
 | `--name-collision-mode <suffix|hash>` | suffix | Tool naming collision strategy |
 | `--cred-store <memory|file>` | memory | Credential persistence backend |
+
+### New SDK Commands (Experimental)
+
+In addition to the legacy SSE server you can use the official MCP SDK transports:
+
+```
+oas-mcp serve-sdk -s <schemaURL> -u <baseURL> [--debug]
+```
+Launches a single OpenAPI spec MCP server over stdio (intended for spawning directly by an MCP client process).
+
+```
+oas-mcp serve-http-sdk [--port 3000] [--host 127.0.0.1] [--debug]
+```
+Starts a Streamable HTTP MCP endpoint supporting session management at `/mcp` (POST for requests, GET for SSE notifications, DELETE to terminate). Provide `openapiParams` inside the initialization request capabilities (experimental) or connect without them to access management tools.
+
+Management tools (available on the root `oas_manager` server when you initialize without `openapiParams`):
+
+| Tool | Description |
+|------|-------------|
+| `oas_list_servers` | List currently managed OpenAPI-generated servers |
+| `oas_add_server` | Add a new server (args: `schemaURL`, `baseURL`, optional `serverName`) |
+| `oas_remove_server` | Remove a managed server (args: `id`) |
+
+Each added server registers its own endpoints as tools within its isolated session; clients may open a new session providing `openapiParams` to directly initialize a specific spec without using the manager.
+
+### Retry & Metrics Enhancements
+Metrics now include `lastRetryAttempts` and `lastStatusCode` for each tool (legacy + SDK paths). Large binary responses add a `resource_link` entry referencing the original URL instead of embedding oversized payloads.
+
+### Zod Validation
+SDK path performs a best-effort conversion of generated JSON input schemas to Zod objects for basic type validation. Complex constructs (oneOf/anyOf/discriminators) fall back to permissive validation.
 
 ## Frontend Web Interface
 A React-based web interface is available for easier configuration and credential management:

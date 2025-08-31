@@ -42,7 +42,7 @@ export class MCPServer {
   async callTool(name: string, args: any): Promise<any> { this.realizeLazyIfNeeded(); const tool = this.tools.get(name); if (!tool) throw new Error(`Tool not found: ${name}`); return tool.handler(args); }
 
   // Wrapper methods kept for backward compatibility with existing handler code
-  record(name: string, ok: boolean, elapsedMs?: number) { recordMetric(this.metrics, name, ok, elapsedMs); }
+  record(name: string, ok: boolean, elapsedMs?: number, extra?: any) { recordMetric(this.metrics, name, ok, elapsedMs, extra); }
   getMetrics() { return snapshotMetrics(this.metrics); }
   setAuthToken(token: string) { this.defaultHeaders['authorization'] = token.startsWith('Bearer ') ? token : `Bearer ${token}`; }
   getDefaultHeaders() { return { ...this.defaultHeaders }; }

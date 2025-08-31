@@ -39,9 +39,21 @@ export function buildInputSchema(ep: any) {
       if (schema.anyOf) out.anyOf = schema.anyOf.map((s:any) => summarizeSchema(s));
       if (schema._mergedAllOf) out.xMergedAllOf = true;
       if (schema.discriminator) {
+        // Deep collect discriminator mapping keys (including nested composed schemas)
+        const collected = new Set<string>();
+        const visit = (sch: any, depth=0) => {
+          if (!sch || typeof sch !== 'object' || depth>20) return;
+            if (sch.discriminator?.mapping) {
+              for (const k of Object.keys(sch.discriminator.mapping)) collected.add(k);
+            }
+            if (Array.isArray(sch.oneOf)) sch.oneOf.forEach((c: any)=>visit(c, depth+1));
+            if (Array.isArray(sch.anyOf)) sch.anyOf.forEach((c: any)=>visit(c, depth+1));
+            if (Array.isArray(sch.allOf)) sch.allOf.forEach((c: any)=>visit(c, depth+1));
+        };
+        visit(schema);
         out.xDiscriminator = {
           propertyName: schema.discriminator.propertyName,
-          mappingKeys: schema.discriminator.mapping ? Object.keys(schema.discriminator.mapping) : undefined,
+          mappingKeys: collected.size ? Array.from(collected) : (schema.discriminator.mapping ? Object.keys(schema.discriminator.mapping) : undefined),
           mapping: schema.discriminator.mapping
         };
       }
@@ -304,7 +316,8 @@ export function registerEndpoints(server: MCPServer, id: string, parsed: any, pa
           const controller = new AbortController();
           const timeoutMs = args.timeoutMs && Number.isFinite(+args.timeoutMs) ? +args.timeoutMs : 10000;
           const timeout = setTimeout(() => controller.abort(), timeoutMs);
-          const rp = args.retryPolicy || {};
+          const defaultRP = (server as any).__defaultRetryPolicy || {};
+          const rp = { ...defaultRP, ...(args.retryPolicy || {}) };
           const retryOnMethods: string[] = Array.isArray(rp.retryOnMethods) && rp.retryOnMethods.length ? rp.retryOnMethods.map((m:string)=>m.toUpperCase()) : ['GET'];
           const retryOnStatuses: number[] = Array.isArray(rp.retryOnStatuses) && rp.retryOnStatuses.length ? rp.retryOnStatuses.map((n:number)=>+n) : [];
           const baseDelayMs = Number.isFinite(+rp.baseDelayMs) ? +rp.baseDelayMs : 100;
@@ -366,10 +379,16 @@ export function registerEndpoints(server: MCPServer, id: string, parsed: any, pa
             }
           } catch (e:any) { const out = finalize({ status: resp.status, ok: resp.ok, headers: headersObj, error: { type: 'read', message: e.message } }); return out; }
           result.body = rawText; if (json !== undefined) result.json = json; if (base64) result.base64 = base64; if (!resp.ok) result.error = { type: 'http', message: `HTTP ${resp.status}`, status: resp.status, attempt };
-          (server as any).record(toolName, resp.ok, elapsedMs);
+          (server as any).record(toolName, resp.ok, elapsedMs, { retryAttempts: retriesPerformed, statusCode: resp.status });
           if (debug) console.log(`[tool:${toolName}] < ${resp.status} (${elapsedMs}ms) - generation.ts:370`);
           if (retriesPerformed) (result as any).retryAttempts = retriesPerformed;
           const finalized = finalize(result as HttpResponseEnvelope);
+          if (finalized.base64 || /\[\[binary \d+ bytes omitted\]\]/.test(finalized.body || '')) {
+            // Provide a resource link stub; clients can choose to re-fetch directly via original URL
+            const links = finalized.content || [];
+            links.push({ type:'resource_link', uri: url, name: ep.operationId || toolName, description: 'Original binary resource (fetch directly)', mimeType: headersObj['content-type'] || 'application/octet-stream' });
+            finalized.content = links;
+          }
           return finalized;
         }
       });
