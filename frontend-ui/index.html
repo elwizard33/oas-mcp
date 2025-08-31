@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5ddkvcz6> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Frontend Web Interface – oas-mcp</title><link rel="icon" href="/oas-mcp/img/favicon.ico"><style>body{margin:0;font-family:system-ui,sans-serif;display:flex;min-height:100vh}nav[data-astro-cid-5ddkvcz6]{width:260px;background:#111827;color:#f9fafb;padding:1rem;overflow:auto}nav[data-astro-cid-5ddkvcz6] a[data-astro-cid-5ddkvcz6]{color:#cbd5e1;text-decoration:none;display:block;padding:.25rem 0}nav[data-astro-cid-5ddkvcz6] a[data-astro-cid-5ddkvcz6].active{color:#fff;font-weight:600}main[data-astro-cid-5ddkvcz6]{flex:1;padding:2rem;max-width:960px}pre[data-astro-cid-5ddkvcz6]{background:#1e293b;padding:1rem;overflow:auto;color:#f1f5f9}code[data-astro-cid-5ddkvcz6]{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}h1[data-astro-cid-5ddkvcz6],h2[data-astro-cid-5ddkvcz6],h3[data-astro-cid-5ddkvcz6]{scroll-margin-top:80px}.toc[data-astro-cid-5ddkvcz6]{border-left:4px solid #e2e8f0;padding-left:.75rem;margin:1rem 0 2rem}@media (max-width:900px){body{flex-direction:column}nav[data-astro-cid-5ddkvcz6]{width:auto;display:flex;flex-wrap:wrap}nav[data-astro-cid-5ddkvcz6] a[data-astro-cid-5ddkvcz6]{margin-right:1rem}}
+</style></head> <body data-astro-cid-5ddkvcz6> <nav data-astro-cid-5ddkvcz6> <h2 style="margin-top:0" data-astro-cid-5ddkvcz6>oas-mcp</h2> <div data-astro-cid-5ddkvcz6> <strong style="display:block;margin-top:.75rem;" data-astro-cid-5ddkvcz6>Introduction</strong> <a href="/oas-mcp/overview" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Overview</a><a href="/oas-mcp/quick-start" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Quick Start</a> </div><div data-astro-cid-5ddkvcz6> <strong style="display:block;margin-top:.75rem;" data-astro-cid-5ddkvcz6>Getting Started</strong> <a href="/oas-mcp/installation" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Installation &amp; Requirements</a><a href="/oas-mcp/cli-usage" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>CLI Usage</a><a href="/oas-mcp/frontend-ui" class="active" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Frontend Web Interface</a><a href="/oas-mcp/configuration" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Configuration Parameters</a> </div><div data-astro-cid-5ddkvcz6> <strong style="display:block;margin-top:.75rem;" data-astro-cid-5ddkvcz6>Core Concepts</strong> <a href="/oas-mcp/openapi-parsing-caching" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>OpenAPI Parsing &amp; Caching</a><a href="/oas-mcp/endpoint-tool-generation" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Endpoint Tool Generation</a><a href="/oas-mcp/authentication-credentials" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Authentication &amp; Credentials</a><a href="/oas-mcp/rate-limiting" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Rate Limiting Strategies</a><a href="/oas-mcp/retry-policy" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Retry Policy</a><a href="/oas-mcp/streaming-responses" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Streaming Responses</a><a href="/oas-mcp/metrics" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Metrics</a><a href="/oas-mcp/security" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Security</a> </div><div data-astro-cid-5ddkvcz6> <strong style="display:block;margin-top:.75rem;" data-astro-cid-5ddkvcz6>Guides</strong> <a href="/oas-mcp/adding-credentials" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Guide: Adding Credentials&quot;</a><a href="/oas-mcp/oauth-flows" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Guide: OAuth Flows&quot;</a><a href="/oas-mcp/multipart-file-uploads" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Guide: Multipart &amp; File Uploads&quot;</a><a href="/oas-mcp/query-param-styles" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Guide: Query Parameter Styles&quot;</a><a href="/oas-mcp/handling-large-binary" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Guide: Handling Large / Binary Responses&quot;</a><a href="/oas-mcp/filtering-endpoints" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Guide: Filtering Endpoints&quot;</a> </div><div data-astro-cid-5ddkvcz6> <strong style="display:block;margin-top:.75rem;" data-astro-cid-5ddkvcz6>API Reference</strong> <a href="/oas-mcp/api/classes/FileCredentialStore" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/classes/FileCredentialStore</a><a href="/oas-mcp/api/classes/MemoryCredentialStore" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/classes/MemoryCredentialStore</a><a href="/oas-mcp/api/functions/buildCredentialStore" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/functions/buildCredentialStore</a><a href="/oas-mcp/api/functions/createMcpServer" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/functions/createMcpServer</a><a href="/oas-mcp/api/functions/startServer" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/functions/startServer</a><a href="/oas-mcp/api/interfaces/APIEndpoint" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/APIEndpoint</a><a href="/oas-mcp/api/interfaces/AuthCredentialMap" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/AuthCredentialMap</a><a href="/oas-mcp/api/interfaces/HttpResponseEnvelope" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/HttpResponseEnvelope</a><a href="/oas-mcp/api/interfaces/MetricsSnapshot" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/MetricsSnapshot</a><a href="/oas-mcp/api/interfaces/ParsedParams" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/ParsedParams</a><a href="/oas-mcp/api/interfaces/Schema" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/Schema</a><a href="/oas-mcp/api/interfaces/SecurityRequirement" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/SecurityRequirement</a><a href="/oas-mcp/api/interfaces/SecurityScheme" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/SecurityScheme</a><a href="/oas-mcp/api/interfaces/ToolDescriptor" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/ToolDescriptor</a><a href="/oas-mcp/api/interfaces/ToolError" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/ToolError</a><a href="/oas-mcp/api/interfaces/ToolMetricsWindow" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/interfaces/ToolMetricsWindow</a><a href="/oas-mcp/api/README" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>api/README</a> </div><div data-astro-cid-5ddkvcz6> <strong style="display:block;margin-top:.75rem;" data-astro-cid-5ddkvcz6>Advanced Topics</strong> <a href="/oas-mcp/name-collision-modes" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Advanced: Name Collision Modes&quot;</a><a href="/oas-mcp/credential-store" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Advanced: Credential Store&quot;</a><a href="/oas-mcp/schema-composition-discriminators" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Advanced: Schema Composition &amp; Discriminators&quot;</a><a href="/oas-mcp/streaming-event-contract" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Advanced: Streaming Event Contract&quot;</a> </div><div data-astro-cid-5ddkvcz6> <strong style="display:block;margin-top:.75rem;" data-astro-cid-5ddkvcz6>Contributing</strong> <a href="/oas-mcp/development-setup" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Contributing: Development Setup&quot;</a><a href="/oas-mcp/architecture-overview" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>&quot;Contributing: Architecture Overview&quot;</a> </div><div data-astro-cid-5ddkvcz6> <strong style="display:block;margin-top:.75rem;" data-astro-cid-5ddkvcz6>Changelog</strong> <a href="/oas-mcp/changelog-link" class="" style="margin-left:.5rem;" data-astro-cid-5ddkvcz6>Changelog</a> </div> <hr data-astro-cid-5ddkvcz6> <a href="https://github.com/elwizard33/oas-mcp" target="_blank" data-astro-cid-5ddkvcz6>GitHub</a> </nav> <main data-astro-cid-5ddkvcz6>  <article> <h1>Frontend Web Interface</h1> <h1>Frontend Web Interface</h1>
+<p>The OAS-MCP project includes a React-based web interface that provides a user-friendly way to configure OpenAPI specifications as MCP servers. The frontend eliminates the need for manual JSON configuration and credential management.</p>
+<h2>Overview</h2>
+<p>The frontend UI is a single-page application built with React and Vite that allows you to:</p>
+<ul>
+<li><strong>Upload or paste OpenAPI specs</strong> (JSON/YAML format)</li>
+<li><strong>Configure server settings</strong> (base URL, schema URL, server name, etc.)</li>
+<li><strong>Manage authentication credentials</strong> securely</li>
+<li><strong>Generate MCP server configurations</strong> automatically</li>
+<li><strong>Track connected MCP servers</strong> in your workspace</li>
+</ul>
+<h2>Getting Started</h2>
+<h3>Running the Frontend</h3>
+<ol>
+<li><p><strong>Start the OAS-MCP server</strong> (required for credential storage):</p>
+<pre><code class="language-bash">npx oas-mcp serve --port 8080 --cred-store file
+</code></pre>
+</li>
+<li><p><strong>Start the frontend development server</strong>:</p>
+<pre><code class="language-bash">cd frontend
+npm install
+npm run dev
+</code></pre>
+</li>
+<li><p><strong>Open the interface</strong> at <code>http://localhost:5173</code></p>
+</li>
+</ol>
+<h3>Production Build</h3>
+<p>To build the frontend for production deployment:</p>
+<pre><code class="language-bash">cd frontend
+npm run build
+</code></pre>
+<p>The built files will be in <code>frontend/dist/</code> and can be served by any static web server.</p>
+<h2>Features</h2>
+<h3>1. Spec Upload &amp; Validation</h3>
+<p>The interface supports multiple ways to provide your OpenAPI specification:</p>
+<ul>
+<li><strong>Paste directly</strong>: Copy/paste JSON or YAML spec content</li>
+<li><strong>File upload</strong>: Upload <code>.json</code>, <code>.yaml</code>, or <code>.yml</code> files</li>
+<li><strong>Automatic validation</strong>: Uses <code>@apidevtools/swagger-parser</code> for validation and dereferencing</li>
+</ul>
+<h3>2. Server Configuration</h3>
+<p>Configure your MCP server settings through an intuitive form:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Base URL</strong></td>
+<td>API base URL (auto-detected from spec)</td>
+<td><code>https://api.example.com</code></td>
+</tr>
+<tr>
+<td><strong>Schema URL</strong></td>
+<td>OpenAPI spec URL</td>
+<td>Auto-generated suggestion</td>
+</tr>
+<tr>
+<td><strong>Server Name</strong></td>
+<td>MCP server identifier</td>
+<td><code>openapi</code></td>
+</tr>
+<tr>
+<td><strong>SSE Server URL</strong></td>
+<td>OAS-MCP server endpoint</td>
+<td><code>http://127.0.0.1:8080</code></td>
+</tr>
+</tbody></table>
+<h3>3. Authentication Management</h3>
+<p>Secure credential management with support for multiple authentication types:</p>
+<h4>Supported Auth Types</h4>
+<ul>
+<li><strong>Bearer Token</strong>: JWT or API tokens</li>
+<li><strong>API Key (Header)</strong>: Custom header-based authentication</li>
+<li><strong>Basic Auth</strong>: Username/password authentication</li>
+<li><strong>Raw Authorization Header</strong>: Custom authorization values</li>
+<li><strong>Custom Headers</strong>: JSON-based header configuration</li>
+<li><strong>None</strong>: No authentication required</li>
+</ul>
+<h4>Credential Storage</h4>
+<ul>
+<li>Credentials are stored <strong>server-side</strong> using the <code>/credentials</code> endpoint</li>
+<li><strong>Never included in URLs</strong> for security</li>
+<li>Supports both memory and file-based credential stores</li>
+<li>File credentials can be <strong>encrypted</strong> with AES-GCM</li>
+</ul>
+<h3>4. Generated Configuration</h3>
+<p>The interface automatically generates MCP server configuration that you can:</p>
+<ul>
+<li><strong>Copy to clipboard</strong>: Ready-to-use JSON snippet</li>
+<li><strong>Copy URL only</strong>: Direct SSE connection string</li>
+<li><strong>Add to VS Code</strong>: Paste into your <code>mcp.json</code> configuration</li>
+</ul>
+<p>Example generated configuration:</p>
+<pre><code class="language-json">{
+  &quot;myapi&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:8080/sse?s=https%3A%2F%2Fapi.example.com%2Fopenapi.json&amp;u=https%3A%2F%2Fapi.example.com&amp;n=myapi&quot;
+  }
+}
+</code></pre>
+<h3>5. Connected Servers Tracking</h3>
+<p>Keep track of configured MCP servers:</p>
+<ul>
+<li><strong>Local storage</strong>: Persists server configurations across sessions</li>
+<li><strong>Server management</strong>: View and remove connected servers</li>
+<li><strong>Metadata tracking</strong>: Base URL, schema URL, and creation timestamps</li>
+</ul>
+<h2>Security Considerations</h2>
+<h3>Credential Handling</h3>
+<ul>
+<li><strong>No sensitive data in URLs</strong>: Authentication tokens never appear in generated URLs</li>
+<li><strong>Server-side storage</strong>: Credentials stored securely on the OAS-MCP server</li>
+<li><strong>Masked display</strong>: Sensitive values are masked in the UI</li>
+<li><strong>Encryption support</strong>: File-based credentials can be encrypted</li>
+</ul>
+<h3>HTTPS Recommendations</h3>
+<p>For production use:</p>
+<ul>
+<li>Use HTTPS for both the OAS-MCP server and frontend</li>
+<li>Ensure OpenAPI schema URLs use HTTPS</li>
+<li>Configure proper CORS headers if hosting frontend separately</li>
+</ul>
+<h2>File Structure</h2>
+<pre><code>frontend/
+├── src/
+│   ├── modules/
+│   │   ├── App.tsx              # Main application component
+│   │   ├── ConfigForm.tsx       # Server configuration form
+│   │   ├── GeneratedConfig.tsx  # Output configuration display
+│   │   └── SpecUploader.tsx     # OpenAPI spec input component
+│   ├── util/
+│   │   ├── buildConfig.ts       # Configuration generation logic
+│   │   └── parseSpec.ts         # OpenAPI spec parsing
+│   ├── types.ts                 # TypeScript type definitions
+│   └── main.tsx                # Application entry point
+├── package.json
+├── vite.config.ts
+└── README.md
+</code></pre>
+<h2>Environment Setup</h2>
+<h3>Development Dependencies</h3>
+<ul>
+<li><strong>React 18.3+</strong>: UI framework</li>
+<li><strong>TypeScript 5.5+</strong>: Type safety</li>
+<li><strong>Vite 5.3+</strong>: Build tool and dev server</li>
+<li><strong>@apidevtools/swagger-parser</strong>: OpenAPI validation</li>
+<li><strong>yaml</strong>: YAML parsing support</li>
+</ul>
+<h3>Browser Compatibility</h3>
+<p>Modern browsers with ES2020+ support required.</p>
+<h2>Credential Store Integration</h2>
+<p>The frontend integrates with the OAS-MCP server&#39;s credential store system:</p>
+<h3>File-based Credentials</h3>
+<p>When using <code>--cred-store file</code>, credentials are saved to:</p>
+<pre><code>.oas_mcps/creds.json
+</code></pre>
+<p><strong>⚠️ Important</strong>: Add this directory to your <code>.gitignore</code>:</p>
+<pre><code class="language-gitignore"># OAS-MCP credential storage
+.oas_mcps/
+</code></pre>
+<h3>Memory-based Credentials</h3>
+<p>When using <code>--cred-store memory</code>, credentials are lost when the server restarts.</p>
+<h2>API Endpoints Used</h2>
+<p>The frontend communicates with these OAS-MCP server endpoints:</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/credentials</code></td>
+<td>POST</td>
+<td>Store authentication credentials</td>
+</tr>
+<tr>
+<td><code>/import-env-credentials</code></td>
+<td>POST</td>
+<td>Import credentials from environment variables</td>
+</tr>
+<tr>
+<td><code>/sse</code></td>
+<td>GET</td>
+<td>Establish MCP server connection</td>
+</tr>
+</tbody></table>
+<h2>Troubleshooting</h2>
+<h3>Common Issues</h3>
+<p><strong>Spec validation fails</strong>:</p>
+<ul>
+<li>Ensure your OpenAPI spec is valid JSON/YAML</li>
+<li>Check that the spec follows OpenAPI 3.x format</li>
+<li>Verify all <code>$ref</code> references can be resolved</li>
+</ul>
+<p><strong>Credential save fails</strong>:</p>
+<ul>
+<li>Ensure the OAS-MCP server is running</li>
+<li>Check that the SSE Server URL is correct</li>
+<li>Verify the server has write permissions for file storage</li>
+</ul>
+<p><strong>Generated config doesn&#39;t work</strong>:</p>
+<ul>
+<li>Ensure both schema URL and base URL are accessible</li>
+<li>Check that authentication credentials are properly saved</li>
+<li>Verify the MCP client can reach the SSE endpoint</li>
+</ul>
+<h3>Debug Mode</h3>
+<p>Start the OAS-MCP server with <code>--debug</code> for detailed logging:</p>
+<pre><code class="language-bash">npx oas-mcp serve --debug --cred-store file
+</code></pre>
+<h2>Next Steps</h2>
+<p>After generating your MCP server configuration:</p>
+<ol>
+<li><strong>Add to VS Code</strong>: Copy the configuration to your <code>mcp.json</code> file</li>
+<li><strong>Test the connection</strong>: Verify the MCP server appears in your client</li>
+<li><strong>Explore generated tools</strong>: List and test the automatically generated tools</li>
+<li><strong>Set up authentication</strong>: Configure credentials for protected APIs</li>
+</ol>
+<p>For more details on credential management, see <a href="adding-credentials.md">Adding Credentials</a>.</p>
+ </article>  </main> </body></html>
